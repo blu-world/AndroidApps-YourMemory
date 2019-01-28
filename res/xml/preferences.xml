@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="game_option"
+        android:title="Game Option" >
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_use_custom_picture"
+            android:summary="You can use your own picture as background image for the game"
+            android:title="Use Custom Picture" />
+
+        <Preference
+            android:dependency="@string/pref_use_custom_picture"
+            android:key="@string/pref_background_image"
+            android:persistent="true"
+            android:summary="This allows you to set a background image from your photo album."
+            android:title="Select Background Picture" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/listArray"
+            android:entryValues="@array/listValues"
+            android:key="@string/pref_game_type"
+            android:summary="You can choose to play either color based or alphabet based matching game"
+            android:title="Game Type" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="player_option"
+        android:title="Player Option" >
+
+        <EditTextPreference
+            android:dialogTitle="Player Name"
+            android:dialogMessage="Enter Player Name:"
+            android:key="@string/pref_player_name"
+            android:defaultValue="Player1"
+            android:title="Player Name"
+            android:summary="Enter Name for the player" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
